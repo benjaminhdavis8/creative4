@@ -37,7 +37,7 @@ const verifyToken = (req, res, next) => {
 		return res.status(403).send({ error: 'No token provided.' });
 	jwt.verify(token, jwtSecret, function(err, decoded) {
 		if (err)
-		  return res.status(500).send({ error: 'Failed to authenticate token.' });
+			return res.status(500).send({ error: 'Failed to authenticate token.' });
 		// if everything good, save to request for use in other routes
 		req.userID = decoded.id;
 		next();
@@ -123,3 +123,4 @@ app.post('/api/users', (req, res) => {
 	});
 });
 
+app.listen(3000, () => console.log('Server listening on port 3000!'));

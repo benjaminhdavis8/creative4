@@ -1,15 +1,42 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Chat from '@/components/Chat'
+import EventList from '@/components/EventList'
+import Groups from '@/components/Groups'
+import HomePage from '@/components/HomePage'
+import Navbar from '@/components/NavBar'
+import Profile from '@/components/Profile'
+import People from '@/components/People'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
-  ]
+	mode: 'history',
+	routes: [
+	{
+		path: '/chat',
+		name: 'Chat',
+		component: Groups
+	},
+	{
+		path: '/groups',
+		name: 'Groups',
+		component: Groups
+	},
+	{
+		path: '/',
+		name: 'HomePage',
+		component: HomePage
+	},
+	{
+		path: '/profile',
+		name: 'Profile',
+		component: Profile
+	},
+	{
+		path: '/people',
+		name: 'People',
+		component: People
+	}
+	]
 })
